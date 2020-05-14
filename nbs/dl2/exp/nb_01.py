@@ -11,8 +11,13 @@ def test(a,b,cmp,cname=None):
     if cname is None: cname=cmp.__name__
     assert cmp(a,b),f"{cname}:\n{a}\n{b}"
 
-def test_eq(a,b): test(a,b,operator.eq,'==')
+# def test_eq(a,b):
+#     test(a,b,operator.eq,'==')
 
+test_eq = lambda a,b: test(a, b, operator.eq, '==')
+
+import os
+import numpy as np
 from pathlib import Path
 from IPython.core.debugger import set_trace
 from fastai import datasets
