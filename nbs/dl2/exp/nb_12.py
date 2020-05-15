@@ -118,7 +118,7 @@ class TokenizeProcessor(Processor):
         toks = parallel(self.proc_chunk, chunks, max_workers=self.max_workers)
         return sum(toks, [])
 
-    def proc1(self, item): return self.proc_chunk([toks])[0]
+    def proc1(self, item): return self.proc_chunk([item])[0]
 
     def deprocess(self, toks): return [self.deproc1(tok) for tok in toks]
     def deproc1(self, tok):    return " ".join(tok)
